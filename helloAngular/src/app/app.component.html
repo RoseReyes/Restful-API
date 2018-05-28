@@ -1,0 +1,69 @@
+<!-- 
+<div class="edit-border">
+<div style="text-align:center">
+    <h1>{{ title }}</h1>
+    <button (click) ="getTaskFromService()">GET ALL TASKS</button>
+    <br><br>
+         <div *ngFor = "let task of tasks"> {{ task.title }}
+           <button (click) = "getOneTaskFromService(task._id)">SHOW</button>
+        </div>
+</div>
+<app-task *ngIf="oneTasks" [taskToShow]="oneTasks"></app-task>
+</div> -->
+
+Third Assignment - RESTFUL Tasks CRUD <div class="allTask">
+    <div style="text-align:center">
+      <h1 style="text-align:center">{{ title }}</h1>
+      <button (click) ="getTaskFromService()">GET ALL TASKS</button>
+      <br>
+      <div *ngFor = "let task of tasks"> {{task.title}} - {{ task.description }}
+      <button (click) = "getOneTaskFromService(task._id)">EDIT</button>
+      <button (click) = "deleteOneTaskFromService(task._id)">DELETE</button>
+    </div>
+</div><br>
+</div>
+<br>
+<div *ngIf = "oneTasks" class="edit-border">
+<div style="text-align:center">
+    <form *ngIf = "oneTasks" (submit) ="updateOneTaskFromService(oneTasks._id)">
+      <label>Title</label>
+      <input type="text" name = "oneTasks.title" [(ngModel)] = "oneTasks.title" />
+      <label>Description</label>
+      <input type="text" name = "oneTasks.description" [(ngModel)] = "oneTasks.description" />
+      <input type="submit" value="Edit"/>
+    </form>
+</div>
+</div>
+<br>
+<div class="second-border">
+  <div style="text-align:center">
+    <form (submit)="createTaskFromService()">
+      <p>{{ newTask | json }}</p>
+      <label>Title</label>
+      <input type="text" name = "newTask.title" [(ngModel)] = "newTask.title"/>
+      <label>Description</label>
+      <input type="text" name = "newTask.description" [(ngModel)] = "newTask.description"/>
+      <input type="submit" value="Create Task"/>
+    </form>
+  </div>
+</div>
+
+
+<!--Second Assignment: Restful Tasks Interactive 
+  <div style="text-align:center">
+  <h1>{{ title }}</h1>
+  <button (click) ="getTaskFromService()">GET ALL TASKS</button>
+       <div *ngFor = "let task of tasks"> {{ task.title }}
+        <button (click) = "getOneTaskFromService(task._id)">SHOW</button>
+      </div>
+</div>
+  
+<div style="text-align:center">
+    <h4 *ngIf = "oneTasks">{{oneTasks.title}}</h4> 
+    <h4 *ngIf ="oneTasks">{{ oneTasks.description }}</h4>
+</div>
+</div> -->
+
+<!-- First Assignment: Restful Tasks Continued -->
+<!-- Display data from a service on-page-load -->
+<!-- <div *ngFor = "let task of tasks"> {{ task.title }} </div> -->

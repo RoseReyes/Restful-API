@@ -1,0 +1,5 @@
+.second-border {
+    border: 5px solid rgb(94, 116, 241);
+    border-radius: 10px;
+    padding: 10px;
+}
